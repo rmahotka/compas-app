@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="header__left-block">
+    <div class="header__block">
       <NuxtLink to="/">
         <iconsLogo />
       </NuxtLink>
@@ -8,6 +8,11 @@
         <NuxtLink to="/tariffs">Тарифы</NuxtLink>
         <NuxtLink to="/tariffs">Контакты</NuxtLink>
       </nav>
+    </div>
+    <div class="header__block">
+      <a class="header-phone" href="tel: +7 495 118-44-22"> +7 495 118-44-22</a>
+
+      <UIButton> Регистрация </UIButton>
     </div>
   </div>
 </template>
@@ -21,10 +26,18 @@
   padding: 11px 0;
   background: linear-gradient(90deg, #000 30%, #1c2734 73%);
 
-  &__left-block {
+  &__block {
     display: flex;
     align-items: center;
     gap: 30px;
+  }
+
+  &-phone {
+    transition: 0.2s;
+
+    &:hover {
+      color: #e58835;
+    }
   }
 }
 
@@ -33,8 +46,6 @@
   gap: 30px;
 
   a {
-    color: #fff;
-    text-decoration: none;
     transition: 0.2s;
     font-size: 18px;
 
