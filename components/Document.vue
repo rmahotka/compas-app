@@ -65,16 +65,6 @@ const breakpoints = ref({
 </script>
 
 <style lang="scss" scoped>
-.next-arrow path,
-.prev-arrow path {
-  transition: 0.2s;
-}
-
-.next-arrow:hover path,
-.prev-arrow:hover path {
-  fill: #0584fe;
-}
-
 .document {
   margin-top: 82px;
   margin-bottom: 473px;
