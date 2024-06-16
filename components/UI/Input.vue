@@ -5,7 +5,7 @@
       type="text"
       :id="id"
       v-model="model"
-      :style="{ borderColor: isError ? 'red' : '' }"
+      :style="{ borderColor: isError ? 'red' : '#bcbcbc' }"
     />
   </div>
 </template>
@@ -38,7 +38,7 @@ const model = defineModel();
 label {
   font-size: 12px;
   line-height: 1.2;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 input {

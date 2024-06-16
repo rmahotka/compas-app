@@ -76,12 +76,12 @@ const breakpoints = ref({
 }
 
 .document {
-  margin-top: 85px;
+  margin-top: 82px;
   margin-bottom: 473px;
 }
 
 .subtitle {
-  margin-bottom: 40px;
+  margin-bottom: 27px;
 }
 
 @media (max-width: 500px) {

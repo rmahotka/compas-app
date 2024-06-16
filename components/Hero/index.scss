@@ -13,7 +13,7 @@
 
   &-block {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 40px;
 
     &__info {
@@ -38,12 +38,16 @@
       margin-bottom: 16px;
 
       div:first-child {
-        width: 100%;
+        width: 320px;
+      }
+
+      div:last-child {
+        width: 213px;
       }
     }
 
     &-btn {
-      margin-top: 15px;
+      margin-top: 13px;
       display: flex;
       align-items: center;
       gap: 21px;
@@ -83,10 +87,23 @@
 }
 
 @media (max-width: 1439px) {
+
+  .hero-block {
+    align-items: center;
+  }
+
   .hero-form-block {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 10px;
+
+    div:first-child {
+      width: 100%;
+    }
+
+    div:last-child {
+      width: 100%;
+    }
   }
 
   .hero-form-btn {

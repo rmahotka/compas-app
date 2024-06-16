@@ -67,7 +67,7 @@ const cardItems = [
 
 <style lang="scss" scoped>
 .plusSection {
-  margin-top: 98px;
+  margin-top: 104px;
 }
 
 .subtitle {
