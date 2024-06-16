@@ -45,4 +45,14 @@ const props = defineProps({
 .item-icon {
   flex: 1 0 auto;
 }
+
+@media (max-width: 767px) {
+  .plus-block-item {
+    justify-content: flex-start;
+  }
+
+  .item-icon {
+    flex: 0 0 auto;
+  }
+}
 </style>

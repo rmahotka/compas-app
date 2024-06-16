@@ -6,7 +6,9 @@
         <div class="hero-block__info">
           <h1 class="title">Проверьте штрафы и зарегестрируйтесь в 1 клик</h1>
           <form action="" @submit.stop.prevent="submitForm" class="hero-form">
-            <UIAlertItem v-if="successForm" />
+            <Transition>
+              <UIAlertItem v-if="successForm" />
+            </Transition>
             <div class="hero-form-block">
               <UIInput
                 v-model="numberAvtoItem"
@@ -44,7 +46,7 @@
             персональных данных и принимаете оферту
           </p>
         </div>
-        <img src="../assets/hero.png" alt="Компьютер" />
+        <img src="../assets/hero.png" alt="Компьютер" class="hero-img" />
       </div>
     </div>
   </section>
@@ -102,11 +104,22 @@ const submitForm = () => {
 </script>
 
 <style lang="scss" scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
 .hero {
   margin-top: 79px;
 
   &-block {
     display: flex;
+    align-items: center;
     gap: 40px;
 
     &__info {
@@ -142,7 +155,6 @@ const submitForm = () => {
 
       &--inherit {
         position: relative;
-        overflow: hidden;
         background-color: inherit;
         display: flex;
         align-items: center;
@@ -154,27 +166,9 @@ const submitForm = () => {
         gap: 5px;
         cursor: pointer;
         transition: 0.2s;
-        z-index: 1;
-
-        &::after {
-          content: "";
-          position: absolute;
-          height: 100px;
-          left: 100%;
-          width: 100%;
-          background-color: #046cce;
-          transition: 0.2s;
-        }
 
         &:hover {
-          border-color: #046cce;
-          &::after {
-            left: 54%;
-          }
-          .hero-form-btn--inherit-time {
-            color: #fff;
-            z-index: 1;
-          }
+          border-color: #fd8301;
         }
 
         &-time {
@@ -191,5 +185,62 @@ const submitForm = () => {
   line-height: 49px;
   margin-bottom: 24px;
   letter-spacing: 0.1px;
+}
+
+@media (max-width: 1439px) {
+  .hero-form-block {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .hero-form-btn {
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .title {
+    text-align: center;
+  }
+
+  .hero-block__footer-text {
+    text-align: center;
+  }
+
+  .hero-img {
+    display: none;
+  }
+  .hero-block {
+    display: block;
+    width: 100%;
+  }
+
+  .hero-block__info {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .title {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 375px) {
+  .title {
+    line-height: 1;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero-form-btn--inherit-time {
+    display: none;
+  }
 }
 </style>

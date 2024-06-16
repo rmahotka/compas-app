@@ -18,4 +18,46 @@
   font-size: 16px;
   color: #001400;
 }
+
+@media (max-width: 1439px) {
+  .alert-block {
+    text-align: center;
+    max-width: 275px;
+    width: 100%;
+    top: -70%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 1023px) {
+  .alert-block {
+    text-align: center;
+    width: 100%;
+    top: -60%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 539px) {
+  .alert-block {
+    top: -68%;
+  }
+}
+
+@media (max-width: 375px) {
+  .alert-block {
+    top: -55%;
+    font-size: 14px;
+    padding: 8px 10px;
+    max-width: 230px;
+  }
+}
+
+@media (max-width: 360px) {
+  .alert-block {
+    top: -65%;
+  }
+}
 </style>

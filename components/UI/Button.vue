@@ -56,4 +56,10 @@ button {
   align-items: center;
   gap: 4px;
 }
+
+@media (max-width: 1439px) {
+  .size-medium {
+    width: 100%;
+  }
+}
 </style>

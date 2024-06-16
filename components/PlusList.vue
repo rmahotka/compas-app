@@ -76,12 +76,37 @@ const cardItems = [
 
 .plus-block {
   display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(362px, 1fr));
   grid-template-columns: repeat(12, 1fr);
   gap: 35px;
 }
 
 .plus-item {
   grid-column: 4 span;
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .plus-block {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .plus-item {
+    grid-column: 6 span;
+  }
+
+  .plus-block {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .plus-item {
+    grid-column: 12 span;
+  }
+
+  .plus-block {
+    gap: 10px;
+  }
 }
 </style>
