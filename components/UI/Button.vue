@@ -1,16 +1,29 @@
 <template>
-  <button>
+  <button v-if="size === 'full'" class="size-full" :class="{ icon: icon }">
+    <slot></slot>
+  </button>
+  <button v-if="size === 'medium'" class="size-medium" :class="{ icon: icon }">
+    <slot></slot>
+  </button>
+  <button v-if="size === 'small'" class="size-small" :class="{ icon: icon }">
     <slot></slot>
   </button>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+  size: {
+    type: String,
+  },
+  icon: {
+    type: Boolean,
+  },
+});
+</script>
 
 <style lang="scss" scoped>
 button {
-  font-size: 15px;
   color: #fff;
-  padding: 9px 18px;
   background: #0584fe;
   border-radius: 7px;
   border: 0;
@@ -20,5 +33,27 @@ button {
   &:hover {
     background: #046cce;
   }
+}
+
+.size-full {
+  padding: 11px 8px;
+  font-size: 18px;
+  width: 100%;
+}
+
+.size-medium {
+  padding: 11px 20px;
+  font-size: 18px;
+}
+
+.size-small {
+  padding: 9px 18px;
+  font-size: 15px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 </style>

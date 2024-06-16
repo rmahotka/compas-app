@@ -1,6 +1,30 @@
 @import 'normalize.css';
 
+:root {
+  --vc-clr-secondary: #d9d9d9 !important;
+  --vc-clr-primary: #007aff !important;
+  --vc-nav-width: 40px !important;
+  --vc-pgn-width: 7px !important;
+  --vc-pgn-height: 7px !important;
+  --vc-pgn-margin: 0 !important;
+  --vc-pgn-border-radius: 50% !important;
+  --vc-pgn-background-color: var(--vc-clr-secondary);
+  --vc-pgn-active-color: var(--vc-clr-primary);
+}
+
+.carousel__pagination-button--active::after {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.carousel__pagination {
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
 body {
+  overflow-x: hidden;
   font-family: 'PT Sans', sans-serif;
 }
 
@@ -12,6 +36,7 @@ h5,
 h6 {
   font-family: 'PT Sans', sans-serif;
   font-weight: 700;
+  margin: 0;
 }
 
 p,
@@ -20,9 +45,60 @@ span,
 div {
   font-family: 'PT Sans', sans-serif;
   font-weight: 400;
+  margin: 0;
 }
 
-a{
+a {
   text-decoration: none;
   color: #fff;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 34px;
+  line-height: 41px;
+}
+
+.pagination-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 16px;
+
+  span {
+    cursor: pointer;
+  }
+
+  &--active {
+    color: #8f8f8f;
+  }
+}
+
+.document-title {
+  font-size: 41px;
+  line-height: 49px;
+  color: #383838;
+  margin-bottom: 25px;
+  margin-top: 40px;
+}
+
+.document-hero-title {
+  color: #000;
+  margin-top: 20px;
+}
+
+.document-text {
+  font-size: 18px;
+  line-height: 22px;
+
+  &-bottom {
+    margin-bottom: 15px;
+  }
 }

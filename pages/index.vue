@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <h1>Главная</h1>
-  </div>
+  <main>
+    <Hero />
+    <PlusList />
+    <Document />
+  </main>
 </template>
 
 <script setup></script>

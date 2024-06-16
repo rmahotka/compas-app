@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="subtitle">Тарифы</h1>
+    <h1 class="subtitle">Вход</h1>
   </div>
 </template>
 
