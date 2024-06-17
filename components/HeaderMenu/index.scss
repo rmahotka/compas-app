@@ -76,16 +76,15 @@
         height: 4px;
         width: 30px;
         border-radius: 8px;
+        transition: 0.2s;
       }
 
       &::after {
         top: 50%;
-        left: 0;
       }
 
       &::before {
         top: 100%;
-        left: 0;
       }
     }
   }
@@ -118,9 +117,8 @@
   }
 
   .head {
-    position: absolute;
+    position: fixed;
     z-index: 1000;
-    display: none;
     top: 0;
     right: -100%;
     background-color: #fff;
@@ -132,6 +130,8 @@
     gap: 20px;
     padding-top: 20px;
     transition: 0.2s;
+      transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        opacity: 0;
 
     .header__block {
       flex-direction: column;
@@ -141,7 +141,6 @@
     }
 
     .opacity-menu {
-    margin-top: 20px;
       a:first-child {
         order: 3;
       }
@@ -160,4 +159,10 @@
       color: #000;
     }
   }
+
+            .head-active {
+              // display: block;
+              opacity: 1;
+              right: 0;
+            }
 }

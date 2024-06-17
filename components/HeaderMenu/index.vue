@@ -4,13 +4,7 @@
       <NuxtLink to="/" class="logo-adaptive">
         <iconsLogo />
       </NuxtLink>
-      <div
-        class="head"
-        :style="[
-          { display: burgetActive ? 'block' : '' },
-          { right: burgetActive ? '0' : '' },
-        ]"
-      >
+      <div class="head" :class="{ 'head-active': burgetActive }">
         <div class="header__block">
           <NuxtLink to="/" class="logo-basic">
             <iconsLogo />
