@@ -1,11 +1,5 @@
 <template>
-  <button v-if="size === 'full'" class="size-full" :class="{ icon: icon }">
-    <slot></slot>
-  </button>
-  <button v-if="size === 'medium'" class="size-medium" :class="{ icon: icon }">
-    <slot></slot>
-  </button>
-  <button v-if="size === 'small'" class="size-small" :class="{ icon: icon }">
+  <button :class="[{ icon: icon }, `size-${size}`]">
     <slot></slot>
   </button>
 </template>

@@ -14,18 +14,17 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
-        >
-        </iframe>
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const emit = defineEmits(["closeModal"]);
+const emit = defineEmits(['closeModal']);
 
 const closeModal = () => {
-  emit("closeModal");
+  emit('closeModal');
 };
 </script>
 
@@ -51,7 +50,7 @@ const closeModal = () => {
   background-color: #fff;
 
   &::after {
-    content: "";
+    content: '';
     width: 21px;
     height: 4px;
     background-color: #fff;
@@ -84,6 +83,20 @@ const closeModal = () => {
     width: 100%;
     height: 100%;
     background-color: #5a5a5a;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal {
+    width: 320px;
+    height: 240px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal {
+    width: 720px;
+    height: 380px;
   }
 }
 </style>

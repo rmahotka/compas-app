@@ -1,5 +1,5 @@
 <template>
-  <YoutubeModal v-if="modal === true" @closeModal="onCloseModal" />
+  <YoutubeModal v-if="modal === true" @closeModal="toggleModal(false)" />
   <section class="hero">
     <div class="container">
       <div class="hero-block">
@@ -34,7 +34,10 @@
                 <span>Проверить штрафы</span>
                 <iconsArrow />
               </UIButton>
-              <button class="hero-form-btn--inherit" @click.prevent="openModal">
+              <button
+                class="hero-form-btn--inherit"
+                @click.prevent="toggleModal(true)"
+              >
                 <iconsYoutube />
                 <span>О сервисе</span>
                 <span class="hero-form-btn--inherit-time">(1 мин. 20 сек)</span>
@@ -53,9 +56,9 @@
 </template>
 
 <script setup>
-const numberAvtoItem = ref("");
-const regionItem = ref("");
-const registrationItem = ref("");
+const numberAvtoItem = ref('');
+const regionItem = ref('');
+const registrationItem = ref('');
 
 const numberAvtoItemError = ref(false);
 const regionItemError = ref(false);
@@ -64,12 +67,8 @@ const registrationItemError = ref(false);
 const modal = ref(false);
 const successForm = ref(false);
 
-const openModal = () => {
-  modal.value = true;
-};
-
-const onCloseModal = () => {
-  modal.value = false;
+const toggleModal = (isOpen) => {
+  modal.value = isOpen;
 };
 
 const submitForm = () => {
@@ -96,13 +95,13 @@ const submitForm = () => {
     setTimeout(() => {
       successForm.value = false;
     }, 2000);
-    numberAvtoItem.value = "";
-    regionItem.value = "";
-    registrationItem.value = "";
+    numberAvtoItem.value = '';
+    regionItem.value = '';
+    registrationItem.value = '';
   }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "./index.scss";
+@import './index.scss';
 </style>

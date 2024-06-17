@@ -4,7 +4,13 @@
       <NuxtLink to="/" class="logo-adaptive">
         <iconsLogo />
       </NuxtLink>
-      <div class="head" :style="{ right: burgetActive ? '0' : '' }">
+      <div
+        class="head"
+        :style="[
+          { display: burgetActive ? 'block' : '' },
+          { right: burgetActive ? '0' : '' },
+        ]"
+      >
         <div class="header__block">
           <NuxtLink to="/" class="logo-basic">
             <iconsLogo />
@@ -44,5 +50,5 @@ const openBurger = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "./index.scss";
+@import './index.scss';
 </style>
